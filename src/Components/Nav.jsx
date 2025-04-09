@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Loader from "./Loader";
 
 function Nav({ openCart }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
+  const sidebarRef = useRef(null);
 
   const handleCartClick = () => {
     setShowLoader(true);
@@ -13,6 +14,25 @@ function Nav({ openCart }) {
       openCart();
     }, 1000);
   };
+
+  // Detect clicks outside the sidebar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <div>
@@ -23,10 +43,10 @@ function Nav({ openCart }) {
           <div>
             <img
               src="https://tz47gb.yourbrand.studio/files/dynamicContent/sites/tz47gb/images/en/layout_2/m66gvf7w/element_203/rwdMode_1/118x94/logo.webp"
-              alt=""
+              alt="Logo"
             />
           </div>
-          <div>
+          <div ref={sidebarRef}>
             <ul className={isOpen ? "sidebar open" : "sidebar"}>
               <li>
                 <Link to="/shop">SHOP</Link>
