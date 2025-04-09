@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "./Button";
 import Loader from "./Loader";
 function Workhop1({ img, title, text, price, productName, id, addToCart }) {
   const [showLoader, setShowLoader] = useState(false);

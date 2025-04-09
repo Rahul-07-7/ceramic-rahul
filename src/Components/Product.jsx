@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "./Button";
 import Loader from "./Loader";
 
 function Product({ id, img, productName, price, addToCart }) {

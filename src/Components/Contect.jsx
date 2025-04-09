@@ -54,6 +54,7 @@ function Contect({ openCart }) {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Product preview from Example.com"
         ></iframe>
       </div>
       <Footer />

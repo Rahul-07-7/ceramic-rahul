@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ShopHeader from "./Shop-Header";
 import Nav from "./Nav";
 import Product from "./Product";

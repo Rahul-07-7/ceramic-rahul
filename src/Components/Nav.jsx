@@ -6,6 +6,7 @@ function Nav({ openCart }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showLoader, setShowLoader] = useState(false);
   const sidebarRef = useRef(null);
+  const menuRef = useRef(null); // Add ref for menu button
 
   const handleCartClick = () => {
     setShowLoader(true);
@@ -15,18 +16,21 @@ function Nav({ openCart }) {
     }, 1000);
   };
 
-  // Detect clicks outside the sidebar
+  // Detect clicks outside sidebar & menu
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target) &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
         setIsOpen(false);
       }
     };
 
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
@@ -70,7 +74,11 @@ function Nav({ openCart }) {
               </li>
             </ul>
           </div>
-          <div className="menu" onClick={() => setIsOpen(!isOpen)}>
+          <div
+            className="menu"
+            ref={menuRef}
+            onClick={() => setIsOpen(!isOpen)}
+          >
             <i
               className={`fa-solid fa-bars ${isOpen ? "rotate" : "rotate-y"}`}
             ></i>
