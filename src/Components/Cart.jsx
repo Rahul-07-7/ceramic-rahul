@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import Toast from "./Toast";
 
 function Cart({ cartItems, updateQuantity, closeCart }) {
   const [showForm, setShowForm] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -23,10 +26,10 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
   };
 
   const timer = () => {
-    alert("Order confirm");
+    setShowToast(true);
     setTimeout(() => {
       closeCart();
-    }, 1000);
+    }, 3000);
   };
 
   return (
@@ -203,6 +206,12 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
                   </div>
                 )}
               </>
+            )}
+            {showToast && (
+              <Toast
+                message="🎉 Order Confirmed!"
+                onClose={() => setShowToast(false)}
+              />
             )}
           </div>
         </div>

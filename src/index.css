@@ -558,7 +558,11 @@ td {
   100% {
     transform: rotate(1turn);
   }
-} /* responsive */
+}
+.px-4 button {
+  margin-top: 20px;
+}
+/* responsive */
 @media screen and (max-width: 990px) {
   .main-product {
     flex-wrap: wrap;
@@ -817,8 +821,29 @@ td {
   .form-container {
     width: 100% !important;
   }
+  .pe-4 h3 {
+    font-size: 26px;
+  }
 }
 
 .form-container {
   width: 50%;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
