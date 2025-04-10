@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Loader from "./Loader";
-function Workhop1({ img, title, text, price, productName, id, addToCart }) {
+function Workhop1({ img, title, text, price, id, addToCart }) {
   const [showLoader, setShowLoader] = useState(false);
 
   const handleCartClick = () => {
     setShowLoader(true);
     setTimeout(() => {
       setShowLoader(false);
-      addToCart({ id, img, productName, price });
+      addToCart({ id, img, productName: title, price });
     }, 1000);
   };
 
@@ -22,7 +22,6 @@ function Workhop1({ img, title, text, price, productName, id, addToCart }) {
           <div>
             <h1>{title}</h1>
             <p className="pb-5">{text} </p>
-
             <div className="d-flex gap-5  btns">
               <button className="main-button" onClick={handleCartClick}>
                 Subscribe

@@ -169,8 +169,9 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
                     </div>
                   </form>
                 ) : (
-                  <div className="p-3">
+                  <div className="order-confirmation">
                     <h4>Confirm Your Order</h4>
+
                     <p>
                       <strong>Name:</strong> {formData.name}
                     </p>
@@ -182,7 +183,7 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
                     </p>
 
                     <h5>Items:</h5>
-                    <ul>
+                    <ul className="order-items">
                       {cartItems.map((item) => (
                         <li key={item.id}>
                           {item.productName} x {item.quantity} = ₹
@@ -190,9 +191,10 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
                         </li>
                       ))}
                     </ul>
+
                     <h5>Total: ₹{totalPrice.toFixed(2)}</h5>
 
-                    <div className="d-flex justify-content-end gap-2 mt-3">
+                    <div className="order-buttons">
                       <button className="btn btn-success" onClick={timer}>
                         Confirm
                       </button>

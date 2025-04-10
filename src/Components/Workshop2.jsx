@@ -8,7 +8,7 @@ function Workhop2({ img, title, text, price, id, productName, addToCart }) {
     setShowLoader(true);
     setTimeout(() => {
       setShowLoader(false);
-      addToCart({ id, img, productName, price });
+      addToCart({ id, img, productName: title, price });
     }, 1000);
   };
 

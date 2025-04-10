@@ -847,3 +847,46 @@ td {
     transform: translateY(20px);
   }
 }
+.order-confirmation {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.order-confirmation h4 {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: #333;
+}
+
+.order-confirmation p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.order-confirmation h5 {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.order-items {
+  margin: 10px 0 15px;
+  padding-left: 20px;
+}
+
+.order-items li {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
