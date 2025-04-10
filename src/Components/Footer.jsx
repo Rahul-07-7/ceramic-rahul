@@ -9,9 +9,11 @@ function Footer() {
             <p>364001 Chitra</p>
             <p>D-306 , Rahul</p>
           </div>
-          <div className="contect">
-            <p>rahuljogadiya007@gamil.com</p>
-            <p>+91 7984289055</p>
+          <div className="d-flex flex-column">
+            <a href="mailto:rahuljogadiya007@gmail.com">
+              rahuljogadiya007@gmail.com
+            </a>
+            <a href="tel:+7984289055">7984289055</a>
           </div>
           <div className="privacy  text-center">
             <p>Store Regulation</p>

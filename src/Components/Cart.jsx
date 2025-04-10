@@ -53,51 +53,53 @@ function Cart({ cartItems, updateQuantity, closeCart }) {
               </div>
             ) : !showForm ? (
               <>
-                <table className="table border-bottom">
-                  <tr>
-                    <th>Item</th>
-                    <th>Quantity</th>
-                    <th>Unit Price</th>
-                    <th>Total Price</th>
-                  </tr>
-                  <tbody>
-                    {cartItems.map((item) => (
-                      <tr key={item.id}>
-                        <td>
-                          <img
-                            src={item.img}
-                            alt={item.productName}
-                            style={{
-                              width: "50px",
-                              height: "50px",
-                              objectFit: "cover",
-                              marginRight: "10px",
-                            }}
-                          />
-                          {item.productName}
-                        </td>
+                <div className="table-container">
+                  <table className="table border-bottom">
+                    <tr>
+                      <th>Item</th>
+                      <th>Quantity</th>
+                      <th>Unit Price</th>
+                      <th>Total Price</th>
+                    </tr>
+                    <tbody>
+                      {cartItems.map((item) => (
+                        <tr key={item.id}>
+                          <td>
+                            <img
+                              src={item.img}
+                              alt={item.productName}
+                              style={{
+                                width: "50px",
+                                height: "50px",
+                                objectFit: "cover",
+                                marginRight: "10px",
+                              }}
+                            />
+                            {item.productName}
+                          </td>
 
-                        <td>
-                          <button
-                            onClick={() => updateQuantity(item.id, -1)}
-                            className="cart-btn"
-                          >
-                            -
-                          </button>
-                          {item.quantity}
-                          <button
-                            onClick={() => updateQuantity(item.id, 1)}
-                            className="cart-btn"
-                          >
-                            +
-                          </button>
-                        </td>
-                        <td>{item.price}</td>
-                        <td>{(item.price * item.quantity).toFixed(2)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                          <td>
+                            <button
+                              onClick={() => updateQuantity(item.id, -1)}
+                              className="cart-btn"
+                            >
+                              -
+                            </button>
+                            {item.quantity}
+                            <button
+                              onClick={() => updateQuantity(item.id, 1)}
+                              className="cart-btn"
+                            >
+                              +
+                            </button>
+                          </td>
+                          <td>{item.price}</td>
+                          <td>{(item.price * item.quantity).toFixed(2)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
                 <div className="d-flex justify-content-between px-4">
                   <button onClick={closeCart} className="btn btn-light">
                     Keep Shopping

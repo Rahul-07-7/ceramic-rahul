@@ -177,7 +177,7 @@ function Header({ openCart, addToCart }) {
       </section>
       <section>
         <div className="our-story">
-          <div className="d-flex justify-content-center gap-2 flex-column text-white w-50 ms-5 h-100">
+          <div className="d-flex justify-content-center gap-2 flex-column text-white  ms-5 h-100">
             <h1>Our Story</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean

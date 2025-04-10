@@ -204,6 +204,7 @@ nav ul li a i {
 }
 .our-story p {
   font-size: 17px;
+  width: 50%;
 }
 
 .footer {
@@ -216,7 +217,14 @@ nav ul li a i {
 .footer p {
   font-size: 20px;
 }
-
+.footer a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none !important;
+}
+.footer a:hover {
+  color: white;
+}
 .icons {
   font-size: 20px;
   display: flex;
@@ -436,9 +444,10 @@ iframe {
 .model {
   background-color: white;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   width: 90%;
   max-width: 1000px;
+  margin: 0 30px;
 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   animation: slideDown 0.4s ease-out;
@@ -722,25 +731,28 @@ td {
     align-items: center;
   }
   .model {
-    overflow-x: auto;
+    width: 100%;
+    overflow-x: hidden;
   }
-  .model table,
-  .model-header,
-  .px-4,
-  .pe-4 {
+
+  .table-container {
+    overflow-x: auto;
+    overflow-y: scroll;
+    width: 100%;
+  }
+
+  .table-container table {
     min-width: 600px;
     border-collapse: collapse;
+    width: 100%;
+    min-height: 200px;
+    height: 100%;
   }
-  .model form input,
-  textarea {
-    min-width: 570px;
+  .pe-4 {
+    text-align: center !important;
   }
-  .model form {
-    padding-right: 30px;
-  }
-  .btn-sub {
-    min-width: 600px;
-    padding-right: 30px;
+  .our-story p {
+    width: 90% !important;
   }
 }
 
@@ -754,11 +766,12 @@ td {
   .collection-img {
     width: 10vw !important;
   }
-  .header-main h1 {
-    font-size: 30px;
-  }
   .header-main p {
-    font-size: 15px;
+    width: 100%;
+    padding: 0 20px;
+  }
+  .header-main h1 {
+    font-size: 45px;
   }
 
   form button {
@@ -766,6 +779,46 @@ td {
     max-width: 100%;
   }
   .btn-sub button {
-    width: 20%;
+    width: 45%;
   }
+  .main-button {
+    width: 100%;
+  }
+
+  .collection-2 {
+    width: 100%;
+  }
+  .collection-2 h2 {
+    font-size: 45px;
+  }
+  .collection-2 p {
+    font-size: 20px;
+  }
+  .workshop-part img {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .workshop-part h2 {
+    text-align: center;
+  }
+  .workshop-part p {
+    padding: 0 20px;
+  }
+  .workshop-part a {
+    padding: 0 20px;
+  }
+  .btn-p {
+    text-align: center;
+  }
+
+  .contect h1 {
+    text-align: center;
+  }
+  .form-container {
+    width: 100% !important;
+  }
+}
+
+.form-container {
+  width: 50%;
 }

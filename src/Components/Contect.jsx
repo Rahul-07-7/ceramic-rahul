@@ -40,7 +40,7 @@ function Contect({ openCart }) {
               </a>
             </div>
           </div>
-          <div className="w-50">
+          <div className="form-container">
             <Form />
           </div>
         </div>
